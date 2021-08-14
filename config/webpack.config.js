@@ -36,7 +36,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     inline: true,
-    port: 8080,
+    port: process.env.PORT || 8080,
     proxy: {
       '/api': process.env.API_URL || 'http://localhost:3000',
     },
