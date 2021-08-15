@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, BrowserRouter  } from 'react-router-dom';
 import ReactNotification from 'react-notifications-component';
 import { useDispatch } from 'react-redux';
 import R from 'ramda';
@@ -41,15 +41,17 @@ export default function Main({ location }) {
       <ReactNotification />
       <Navigation pathname={location.pathname} />
       <div className="main">
-        <Switch>
-          <Route exact path="/" component={WelcomePage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={RegisterPage} />
-          <Route path="/home" component={HomePage} />
-          <Route path="/todo" component={TodoPage} />
-          <Route path="/settings" component={SettingsPage} />
-          <Route path="*" component={LostPage} />
-        </Switch>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={WelcomePage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
+            <Route path="/home" component={HomePage} />
+            <Route path="/todo" component={TodoPage} />
+            <Route path="/settings" component={SettingsPage} />
+            <Route path="*" component={LostPage} />
+          </Switch>
+        </BrowserRouter>
       </div>
       <Footer />
     </div>
