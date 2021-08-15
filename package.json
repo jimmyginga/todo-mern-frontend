@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "webpack -p",
     "build": "./scripts/build.sh",
-    "start": "node server.js",
+    "start": "webpack --mode=production --config ./config/webpack.prd.config.js",
     "lint": "eslint client",
     "lint:fix": "eslint client --fix",
     "test": "./scripts/test.sh",
