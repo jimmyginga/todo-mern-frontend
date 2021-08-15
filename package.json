@@ -4,9 +4,9 @@
   "description": "Client for MERN Boilerplate",
   "main": "client/index.js",
   "scripts": {
-    "postinstall": "webpack -p",
+    "postinstall": "webpack",
     "build": "./scripts/build.sh",
-    "start": "webpack --mode=production --config ./config/webpack.prd.config.js",
+    "start": "./scripts/start.sh",
     "lint": "eslint client",
     "lint:fix": "eslint client --fix",
     "test": "./scripts/test.sh",
