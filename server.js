@@ -8,6 +8,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log('Server is running');
-});
+app.listen(PORT);
+// eslint-disable-next-line no-console
+console.log('Server is running');
