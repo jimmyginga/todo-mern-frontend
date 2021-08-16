@@ -1,11 +1,11 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 8001;
 app.use(express.static(__dirname));
 app.get('/', (req, res) => {
-  res.redirect('http://google.com');
+  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT);
