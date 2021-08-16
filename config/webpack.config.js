@@ -1,10 +1,10 @@
-const webpack               = require('webpack');
-const path                  = require('path');
-const HtmlWebpackPlugin     = require('html-webpack-plugin');
-const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const resolve = dir => path.join(__dirname, '../', dir);
+const resolve = (dir) => path.join(__dirname, '../', dir);
 const env = process.env.NODE_ENV || 'development';
 const apiURL = process.env.API_URL || '';
 
@@ -48,9 +48,8 @@ module.exports = {
     resolve('client/index.js'),
   ],
   output: {
-    filename: isDev ? '[name].js' : '[name].[hash].js',
-    path: resolve('dist'),
-    publicPath: '/',
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js',
   },
   resolve: {
     alias: {
@@ -81,15 +80,26 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
       },
       {
         test: /\.scss$/,
-        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.less$/,
-        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'less-loader',
+        ],
       },
       {
         test: /\.(jpe?g|png|gif)$/,
