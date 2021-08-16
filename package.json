@@ -4,7 +4,7 @@
   "description": "Client for MERN Boilerplate",
   "main": "client/index.js",
   "scripts": {
-    "prestart": "./scripts/build.sh",
+    "postinstall": "webpack --mode production --env production",
     "dev-server": "webpack-dev-server --open",
     "start": "node server.js",
     "build": "webpack --mode=production --config ./config/webpack.prd.config.js",
