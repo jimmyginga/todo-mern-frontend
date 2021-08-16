@@ -4,8 +4,10 @@
   "description": "Client for MERN Boilerplate",
   "main": "client/index.js",
   "scripts": {
-    "build": "./scripts/build.sh",
-    "start": "./scripts/start.sh",
+    "dev-server": "webpack-dev-server --open",
+    "start": "node server.js",
+    "build": "webpack -p",
+    "heroku-postbuild": "npm run build",
     "lint": "eslint client",
     "lint:fix": "eslint client --fix",
     "test": "./scripts/test.sh",
