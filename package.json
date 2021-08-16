@@ -5,7 +5,7 @@
   "main": "client/index.js",
   "scripts": {
     "dev-server": "webpack-dev-server --open",
-    "start": "./scripts/start.sh",
+    "start": "./scripts/build.sh",
     "build": "webpack --mode=production --config ./config/webpack.prd.config.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint client",
